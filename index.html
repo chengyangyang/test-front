@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+    <script src="js/jquery-3.3.1.js"></script>
+    <style>
+        .confirm{
+            background-color: #8080ff;
+            height: 300px;
+            width: 500px;
+            text-align: center;
+            line-height:150px;
+            position: fixed;
+            top: 40px;
+            left: 400px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <table border="border">
+        <thead>
+            <tr><th>姓名</th><th>年龄</th><th>性别</th><th>操作</th></tr>
+        </thead>
+        <tbody class="tablebox">
+            <tr><td>张三1</td><td>24</td><td>男</td><td><button class="deletebtn">删除</button></td></tr>
+            <tr><td>张三2</td><td>24</td><td>男</td><td><button class="deletebtn">删除</button></td></tr>
+            <tr><td>张三3</td><td>24</td><td>男</td><td><button class="deletebtn">删除</button></td></tr>
+            <tr><td>张三4</td><td>24</td><td>男</td><td><button class="deletebtn">删除</button></td></tr>
+            <tr><td>张三5</td><td>24</td><td>男</td><td><button class="deletebtn">删除</button></td></tr>
+            <tr><td>张三6</td><td>24</td><td>男</td><td><button class="deletebtn">删除</button></td></tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="confirm">
+    <h3>您确定要删除该条信息吗？</h3>
+    <button class="back">取消</button>
+    <button class="submit-data">确定</button>
+</div>
+
+</body>
+<script>
+    $(function () {
+        //var a = "abcdef";
+        //alert(a.includes("cd"))
+
+        let index;
+        $('.deletebtn').click(function(){
+            $('.confirm').show();
+            index = $(this).parents("tr").index();
+        })
+        $('.back').click(function(){
+            $('.confirm').hide();
+
+        })
+        $('.submit-data').click(function(){
+           $(".tablebox tr").eq(index).remove();
+           $('.confirm').hide();
+        })
+
+    })
+</script>
+</html>
