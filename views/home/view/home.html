@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+
+<input type="text" id="startDate">
+<input type="text" id="endDate">
+
+<script>
+    $(function(){
+        $(function(){
+            lay('#startDate').on('click', function(e){ //假设 test1 是一个按钮
+                var end = $("#endDate").val();
+                var obj = {
+                    elem: '#startDate'
+                    ,show: true //直接显示
+                    //,closeStop: '#startDate'
+                };
+                if(end){
+                    obj.max = end;
+                }
+                laydate.render(obj);
+            });
+
+            lay('#endDate').on('click', function(e){ //假设 test1 是一个按钮
+                var start = $("#startDate").val();
+                var obj = {
+                    elem: '#endDate'
+                    ,show: true //直接显示
+                    // ,closeStop: '#endDate'
+                }
+                if(start){
+                    obj.min = start;
+                }
+                laydate.render(obj);
+            });
+        })
+
+
+    })
+
+</script>
+
+</body>
+</html>
