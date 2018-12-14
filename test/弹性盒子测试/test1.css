@@ -1,0 +1,55 @@
+
+
+.flex-container{
+    display: flex;  /*定义弹性盒子的标签*/
+    width: 500px;
+    height: 500px;
+    background-color: red;
+    /*定义弹性盒子中子元素的位置*/
+    /**
+    row:横向从左到右排列 默认的排序方式
+    row-reverse 反转(盒子1在右边)横向排列 (右对齐)
+    column 纵向排列
+    column-reverse 纵向反转下对齐
+     */
+    flex-direction: row;
+    /*弹性盒子父类中子元素的位置*/
+    /**
+    flex-start 从左到右排列
+    flex-end 从右到左排列
+    center 中间开始排列
+    space-between 平分
+    space-around 平分 且两边占1/2
+     */
+    justify-content: space-around;
+    /*检测纵轴的对齐方式*/
+    /**
+    flex-start 从上往下
+    flex-end 从下往上
+    center 居中
+    baseline 行内轴与侧轴同一条
+    stretch
+     */
+    align-items: center;
+    /*是否换行(弹性容器为单行)*/
+    /**
+    nowrap 默认不进行换行,会溢出
+    wrap 进行换行
+    wrap-reverse 反转排列
+     */
+    flex-wrap: wrap;
+}
+
+.tow{
+    order: -1;
+    align-self: flex-end;
+}
+
+.flex-item{
+    color: white;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    margin: auto;
+
+}

@@ -1,0 +1,187 @@
+@charset "UTF-8";
+
+*{
+  padding: 0px;
+  margin: 0px;
+}
+li{
+  list-style: none;
+}
+.clearFix{
+  content: "";
+  clear: both;
+  display: table;
+  zoom: 1;
+}
+/*满屏*/
+.full-container{
+  width:100%;
+  margin: 0px;
+  padding: 0px;
+}
+/*1200px内容区域*/
+.container {
+  width: 1200px;
+  margin: 0px auto;
+}
+.small-container{
+  width: 900px;
+  margin: 0px auto;
+}
+
+/*垂直居中,左右1 子类中书写*/
+.align-center1{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+}
+/*垂直居中2 父级里面写 需要在子类中写margin:0px auto 左右居中*/
+.align-center2{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/*垂直居中3 父类里面写*/
+.align-center3{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-center{
+  margin: 0px auto;
+}
+
+a{
+  text-decoration: none;
+}
+
+.box-l-short {
+  border-left: 1px #d1d1d1 solid; /*add by   */
+  padding-left: 20px; /*add by   */
+}
+
+.box-b1 {
+  border-bottom: 1px #d1d1d1 solid; /*add by   */
+}
+.box-b2 {
+  border-bottom: 1px solid #dee5f1; /*add by   */
+}
+.box-m10{
+  border: 1px solid #dee5f1;
+  margin: 10px;
+}
+
+.absolute{
+  position: absolute;
+}
+.relative{
+  position: relative;
+}
+
+.float-left{
+  float: left;
+}
+.float-right{
+  float: right;
+}
+.clearFix:after {clear: both;display: block;content: "";height: 0;visibility: hidden;}
+
+.m-t10{
+  margin-top: 10px;
+}
+.m-t20{
+  margin-top: 20px;
+}
+.m-t30{
+  margin-top: 30px;
+}
+.m-t40{
+  margin-top: 40px;
+}
+.m-b10{
+  margin-bottom: 10px;
+}
+.m-b20{
+  margin-bottom: 20px;
+}
+.m-b30{
+  margin-bottom: 30px;
+}
+.m-b40{
+  margin-bottom: 40px;
+}
+.m-l5 {
+  margin-left: 5px;
+}
+.m-l10{
+  margin-left: 10px;
+}
+
+.h-24{
+  height: 24px;
+}
+.h-41{
+  height: 41px;
+}
+.h-50{
+  height: 50px;
+}
+.h-100{
+  height: 100px;
+}
+.h-200{
+  height: 200px;
+}
+
+.h-600{
+  height: 600px;
+}
+.h-800{
+  height: 800px;
+}
+.h-p100{
+    height: 100%;
+}
+
+
+.w-140{
+  width: 140px;
+}
+.w-200{
+  width: 200px;
+}
+.w-400{
+    width: 400px;
+}
+.w-500{
+  width: 500px;
+}
+.w-600{
+  width: 600px;
+}
+.w-700{
+  width: 700px;
+}
+.w-800{
+  width: 800px;
+}
+
+.g-c{
+  background-color: #B7E1B8;
+}
+
+.p-t50{
+  padding-top: 50px;
+}
+.p-lr10{
+  padding:0px 10px;
+}
+
+.t-5{
+  top: 5px;
+}

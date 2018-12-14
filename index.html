@@ -2,65 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>测试</title>
-    <script src="js/jquery-3.3.1.js"></script>
-    <style>
-        .confirm{
-            background-color: #8080ff;
-            height: 300px;
-            width: 500px;
-            text-align: center;
-            line-height:150px;
-            position: fixed;
-            top: 40px;
-            left: 400px;
-            display: none;
-        }
-    </style>
+    <title>首页</title>
+    <link rel="stylesheet" href="./static/common/common.css">
 </head>
-<body>
-<div>
-    <table border="border">
-        <thead>
-            <tr><th>姓名</th><th>年龄</th><th>性别</th><th>操作</th></tr>
-        </thead>
-        <tbody class="tablebox">
-            <tr><td>张三1</td><td>24</td><td>男</td><td><button class="deletebtn">删除</button></td></tr>
-            <tr><td>张三2</td><td>24</td><td>男</td><td><button class="deletebtn">删除</button></td></tr>
-            <tr><td>张三3</td><td>24</td><td>男</td><td><button class="deletebtn">删除</button></td></tr>
-            <tr><td>张三4</td><td>24</td><td>男</td><td><button class="deletebtn">删除</button></td></tr>
-            <tr><td>张三5</td><td>24</td><td>男</td><td><button class="deletebtn">删除</button></td></tr>
-            <tr><td>张三6</td><td>24</td><td>男</td><td><button class="deletebtn">删除</button></td></tr>
-        </tbody>
-    </table>
-</div>
+<script>
+    function iframeAutoHeight(){
+        var iframe = document.getElementById("body-content");
+        if(navigator.userAgent.indexOf("Firefox") >0 || navigator.userAgent.indexOf("rv:11") >0 || navigator.userAgent.indexOf("MSIE") >0){
+            iframe.height=iframe.contentWindow.document.body.scrollHeight;
+        }else {
+            iframe.height=iframe.contentWindow.document.documentElement.scrollHeight;
+        }
+    }
 
-<div class="confirm">
-    <h3>您确定要删除该条信息吗？</h3>
-    <button class="back">取消</button>
-    <button class="submit-data">确定</button>
-</div>
+    //如果异步请求,需要回调这个高度的方法
+    function reSetIfremeAutoHeight(){
+        window.top.window.iframeAutoHeight();
+    }
+</script>
+
+<body>
+<iframe name="home" src="views/home/view/head.html" height="148px" marginwidth="0" marginheight="0" width="100%" frameborder="0"></iframe>
+
+<iframe style="margin-top: -5px;" id="body-content" name="home1" frameborder="0" width="100%" scrolling="no" marginwidth="0" marginheight="0" onload="javascript:iframeAutoHeight();"></iframe>
+
+<iframe style="margin-top: -5px;" src="views/home/view/foot.html" width="100%" height="250px" marginwidth="0" marginheight="0" frameborder="0" scrolling="no"></iframe>
 
 </body>
-<script>
-    $(function () {
-        //var a = "abcdef";
-        //alert(a.includes("cd"))
 
-        let index;
-        $('.deletebtn').click(function(){
-            $('.confirm').show();
-            index = $(this).parents("tr").index();
-        })
-        $('.back').click(function(){
-            $('.confirm').hide();
-
-        })
-        $('.submit-data').click(function(){
-           $(".tablebox tr").eq(index).remove();
-           $('.confirm').hide();
-        })
-
-    })
-</script>
 </html>
